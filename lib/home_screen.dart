@@ -76,15 +76,14 @@ class _ScreenState extends State<Screen> {
                                 title: '+/-',
                                 color: const Color(0xffc7e2fa),
                                 onPress: () {
-                                  if (userInput[0] != '-') {
-                                    answer = '-$userInput';
-                                  } else {
-                                    answer = userInput.substring(1);
-                                  }
+                                  var b=userInput;
+                                  if(userInput.contains('–')){b=b.replaceAll('–','-');}
+                                  double a=double.parse(b);
+                                  a=a*(-1);
+                                  answer=a.toString();
                                   if (answer.endsWith('.0')) {
                                     answer = answer.substring(0, answer.length - 2);
                                   }
-                                  userInput = answer;
                                   setState(() {});
                                 }),
                             Button(
