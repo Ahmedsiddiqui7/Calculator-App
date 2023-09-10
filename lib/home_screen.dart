@@ -94,7 +94,6 @@ class _ScreenState extends State<Screen> {
                                   double a = double.parse(userInput);
                                   a = a / 100;
                                   answer = a.toString();
-                                  userInput = answer;
                                 }
                                 setState(() {});
                               },
